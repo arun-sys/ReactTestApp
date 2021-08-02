@@ -7,23 +7,23 @@ export default function Barchart() {
             <h1>Bar Chart</h1>
 
             <p>HTML</p>
-            <div class="container">
-                <div class="skills html">90%</div>
+            <div className="container">
+                <div className="skills html">90%</div>
             </div>
 
             <p>CSS</p>
-            <div class="container">
-                <div class="skills css">80%</div>
+            <div className="container">
+                <div className="skills css">80%</div>
             </div>
 
             <p>JavaScript</p>
-            <div class="container">
-                <div class="skills js">65%</div>
+            <div className="container">
+                <div className="skills js">65%</div>
             </div>
 
             <p>PHP</p>
-            <div class="container">
-                <div class="skills php">60%</div>
+            <div className="container">
+                <div className="skills php">60%</div>
             </div>
         </div>
     )
