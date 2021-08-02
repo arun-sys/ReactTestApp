@@ -24,6 +24,5 @@ class App extends React.Component {
 
   }
 
-}
-
-        export default App;
+896186152eec4d17c916bf673c
+App;
