@@ -1,8 +1,15 @@
 import React from "react";
+
 class App extends React.Component {
 
   constructor(props) {
     super(props)
+    this.state={
+        SignedUser:null
+    }
+  }
+  signIn(name){
+    this.setState({SignedUser:name});
   }
   render() {
     return (
@@ -12,8 +19,8 @@ class App extends React.Component {
         {/* <Login
           onSignIn={this.signIn.bind(this)}
         /> */}
-        {(this.props.username) ?
-          <div>Successfully Logged in! <br/> User name: <strong>{this.props.username}</strong></div> : <div>
+        {(this.state.SignedUser) ?
+          <div>Successfully Logged in! <br/> User name: <strong>{this.state.SignedUser}</strong></div> : <div>
 
             Please Login as a new user <br /> <a href="/login"> click here to login</a>
           </div>

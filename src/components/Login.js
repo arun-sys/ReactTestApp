@@ -1,5 +1,5 @@
 import React from "react";
-import App from "./App";
+import App from "../App";
 
 class Login extends React.Component {
   constructor(props) {
@@ -7,6 +7,7 @@ class Login extends React.Component {
     this.state = {
       username: null,
       password:null,
+      passProp:false,
     }
     this.UserNameInput = React.createRef();
     this.PasswordInput = React.createRef();
@@ -20,7 +21,10 @@ class Login extends React.Component {
       //   username : this.UserNameInput.current.value,
       //   password : this.PasswordInput.current.value,
       // })
-      // console.log("handleSignIn",this.state.username,this.state.password);
+      // console.log(" this.props", this.props);
+      this.setState({
+        passProp : true,
+      });
       this.props.history.push('/home');
     }
     handleChange(e){
@@ -28,20 +32,20 @@ class Login extends React.Component {
         username : this.UserNameInput.current.value,
         password : this.PasswordInput.current.value,
       })
-      console.log("handleSignIn",this.state.username,this.state.password);
+      console.log("handleChange",this.state.username,this.state.password);
     }
     render() {
       return (
         <div>
         <form onSubmit={this.handleSignIn}>
           <h3>Sign in</h3>
-          <input type="text" ref={this.UserNameInput} placeholder="enter username....." onClick={this.handleChange} /> <br/>
-          <input type="password" ref={this.PasswordInput} placeholder="enter password...." onClick={this.handleChange}/> <br/>
+          <input type="text" ref={this.UserNameInput} placeholder="enter username....." onChange={this.handleChange} /> <br/>
+          <input type="password" ref={this.PasswordInput} placeholder="enter password...." onChange={this.handleChange}/> <br/>
           {/* <button >Log In</button> */}
           <input type="submit" value="Log In" />
         </form>
         {
-          (this.state.username) ? <App username={this.state.username}/> : <div></div>
+          (this.state.passProp) ? <App signIn={this.state.username}/> : <div></div>
         }
         
          <a href="/"> click here to Log Out</a>
